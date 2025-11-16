@@ -23,7 +23,18 @@ namespace p511_oop
    
 
 
+        public void Print()
+        {
+             Console.WriteLine($"Name: {name}, Surname: {surname}, age: {age}, city: {city}");
+        }
+        
+           
+       
+    }
 
+
+    internal class Program
+    {
         static void Main(string[] args)
         {
            Student student = new Student();
