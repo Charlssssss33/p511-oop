@@ -5,25 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace p511_oop
-{
-    class User
+{ 
+    public class Student
     {
-        public string name;
-        public string surname;
+        public string firstName;
+        public string lastname;
         public int age;
-        public string city;
 
-
-        public User(string name, string surname, int age, string city) 
+        public void Introduce() 
         {
-            this.name = name;
-            this.surname = surname;
-            this.age = age;
-            this.city = city;
-        } 
-            
+            Console.WriteLine($"Пивет, меня зовут {firstName} {lastname},мне {age} лет");
+        }
+    }
 
-
+    internal class Program
+    {
+   
 
 
         public void Print()
@@ -40,8 +37,18 @@ namespace p511_oop
     {
         static void Main(string[] args)
         {
-            User user = new User("John", "Doe", 25, "city");
-            user.Print();
+           Student student = new Student();
+            student.firstName = "Иван";
+            student.lastname = "Петров";
+            student.age = 19;
+
+            Student student1 = new Student();
+            student1.firstName = "Анна";
+            student1.lastname = "Сидорова";
+            student1.age = 20;
+            Console.WriteLine("--- Знакомство со студентами ---");
+            student.Introduce();
+            student1.Introduce();
         }
     }
 }
