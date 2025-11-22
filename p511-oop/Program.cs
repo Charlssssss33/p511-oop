@@ -6,49 +6,28 @@ using System.Threading.Tasks;
 
 namespace p511_oop
 { 
-    public class Student
-    {
-        public string firstName;
-        public string lastname;
-        public int age;
-
-        public void Introduce() 
-        {
-            Console.WriteLine($"Пивет, меня зовут {firstName} {lastname},мне {age} лет");
-        }
-    }
-
-    internal class Program
-    {
    
 
-
-        public void Print()
-        {
-             Console.WriteLine($"Name: {name}, Surname: {surname}, age: {age}, city: {city}");
-        }
-        
-           
-       
-    }
-
-
     internal class Program
     {
+        static int CountVowels(string text)
+        {
+            int count = 0;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                char currentChar = currentchar[i]
+             if '(currentchar == 'a' || currentchar == 'e' || currentchar == 'i' || currentchar == 'o' || currentchar == 'u'(currentchar == 'A' || currentchar == 'E' || currentchar == 'I' || currentchar == 'O' || currentchar == 'U')
+
+                {
+                    count++;
+                }
+                return count;
+            }
+        }
         static void Main(string[] args)
         {
-           Student student = new Student();
-            student.firstName = "Иван";
-            student.lastname = "Петров";
-            student.age = 19;
-
-            Student student1 = new Student();
-            student1.firstName = "Анна";
-            student1.lastname = "Сидорова";
-            student1.age = 20;
-            Console.WriteLine("--- Знакомство со студентами ---");
-            student.Introduce();
-            student1.Introduce();
+        
         }
     }
 }
