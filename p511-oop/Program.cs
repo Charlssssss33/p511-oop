@@ -1,54 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace p511_oop
 { 
-    public class Student
+    class Animal
     {
-        public string firstName;
-        public string lastname;
-        public int age;
+       protected string Name { get; set; }
 
-        public void Introduce() 
+        public Animal(string name)
         {
-            Console.WriteLine($"Пивет, меня зовут {firstName} {lastname},мне {age} лет");
+            Name = name;
+        }
+
+
+        public virtual void Eat()
+        {
+            Console.WriteLine("Животное ест");
         }
     }
-
-    internal class Program
+    
+    class Dog : Animal 
     {
-   
+        public Dog(string name) : base(name) { }
 
-
-        public void Print()
+        public override void Eat()
         {
-             Console.WriteLine($"Name: {name}, Surname: {surname}, age: {age}, city: {city}");
+            Console.WriteLine($"{Name} кушает корм");
         }
+    }
         
-           
-       
-    }
-
+    class Cat : Animal
+    {
+        
+        public override void Eat()
+        {
+            Console.WriteLine($"{Name} кушает корм");
+        }
+    } 
 
     internal class Program
     {
         static void Main(string[] args)
         {
-           Student student = new Student();
-            student.firstName = "Иван";
-            student.lastname = "Петров";
-            student.age = 19;
+         Dog dog = new Dog("Bob");
+            dog.Eat();
 
-            Student student1 = new Student();
-            student1.firstName = "Анна";
-            student1.lastname = "Сидорова";
-            student1.age = 20;
-            Console.WriteLine("--- Знакомство со студентами ---");
-            student.Introduce();
-            student1.Introduce();
+         Cat cat = new Cat("Boba");
+           cat.Eat();
+   
         }
     }
 }
