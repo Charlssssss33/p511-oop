@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace p511_oop
 { 
@@ -13,12 +14,18 @@ namespace p511_oop
     {
         static void Main(string[] args)
         {
-            List<Transport> transports = new List<Transprt>()
+           try
            {
-               new Car(),
-           }; 
-
+                string text = File.ReadAllText("data.txt");
+                Console.WriteLine(text);
+           }catch(UnauthorizedAccessException ex)
+            {
+                Console.WriteLine("Нет прав на открытие файлов")
+            }
            
+
+           }
+          
         }
     }
 }
