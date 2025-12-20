@@ -5,27 +5,31 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net.Configuration;
 
 namespace p511_oop
-{ 
+{
+    class Person
+    {
+        public string Name {get , set; }
+        public string Age {get , set;  }
+
+     public Person(string name, string age)
+        {
+            Name = name;
+            Age = age;
+        }
+    }
+
+
     
 
     internal class Program
     {
         static void Main(string[] args)
         {
-           try
-           {
-                string text = File.ReadAllText("data.txt");
-                Console.WriteLine(text);
-           }catch(UnauthorizedAccessException ex)
-            {
-                Console.WriteLine("Нет прав на открытие файлов")
-            }
-           
-
-           }
-          
+            Person person = Person("John", 25);
+            person.ToString 
         }
     }
 }
