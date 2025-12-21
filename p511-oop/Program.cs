@@ -9,18 +9,7 @@ using System.Net.Configuration;
 
 namespace p511_oop
 {
-    class Person
-    {
-        public string Name {get , set; }
-        public string Age {get , set;  }
-
-     public Person(string name, string age)
-        {
-            Name = name;
-            Age = age;
-        }
-    }
-
+  
 
     
 
@@ -28,8 +17,7 @@ namespace p511_oop
     {
         static void Main(string[] args)
         {
-            Person person = Person("John", 25);
-            person.ToString 
+        
         }
     }
 }

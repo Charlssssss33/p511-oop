@@ -1,27 +1,33 @@
-﻿using System;
-
-
-Internal class Student
+﻿Internal class Student
 {
-	protected string Name { get; set; }
-	protected string Surname { get; set; }
-	protected string Sroup { get; set; }
-
-	public Student(string name,string surname , string group)
-	{
-		Name = name;
-		Surname = surname;
-		Sroup = group;
-	}
-    public virtual void Print()
+    string Name { get; set; }
+    int Age { get; set; }
+    double AverageGrade { get; set; }
+    public Student(string name, int age, double averageGrade)
     {
-		Console.WriteLine("Student:");
-		Console.writeLine($"Name: {Name}");
-		Console.WiteLine($"Surname: {surname}");
-	}
-	
-	
-		
+        Name = name;
+        Age = age;
+        AverageGrade = averageGrade;
+    }
+    public virtual string ToString()
+    {
+        return $"ФИО: {Name}; Возраст: {Age}; СреднийБалл: {AverageGrade}";
+    }
+}
+internal class StudentManager
+{
+    private List<Student> students = new List<Student>();
 
-	
+    public void AddStudent(Student student) 
+    {
+        if (student == null)
+        {
+        students.Add(student);
+            Console.WriteLine($"Студент {student.Name},добавлен");
+        }
+    }
+    public void PrintAllStudent()
+    {
+                                         
+    }
 }
